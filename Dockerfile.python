@@ -2,7 +2,7 @@ FROM python:3.13.9-slim AS builder
 WORKDIR /app
 
 RUN apt-get update && \
-    apt-get install -y #-no-install-recommends gcc
+    apt-get install -y
 
 RUN python3 -m venv /app/venv
 ENV PATH="/app/venv/bin:$PATH"
