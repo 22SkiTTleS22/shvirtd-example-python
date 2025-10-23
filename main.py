@@ -121,7 +121,7 @@ def get_requests():
     try:
         with get_db_connection() as db:
             cursor = db.cursor()
-            query = "SELECT id, request_date, request_ip FROM db_table ORDER BY id DESC LIMIT 50"
+            query = "SELECT id, request_date, request_ip FROM {db_table} ORDER BY id DESC LIMIT 50"
             cursor.execute(query)
             records = cursor.fetchall()
             cursor.close()

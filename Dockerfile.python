@@ -1,4 +1,4 @@
-FROM python:3.12-slim as builder
+FROM python:3.13.9-slim AS builder
 WORKDIR /app
 
 RUN apt-get update && \
@@ -12,7 +12,7 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 
-FROM python:3.12-alpine as worker
+FROM python:3.13.9-slim AS worker
 WORKDIR /app
 
 RUN addgroup --system python && \
